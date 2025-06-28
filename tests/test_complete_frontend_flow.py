@@ -196,13 +196,13 @@ Signed: March 1, 2024
             # Convert to dictionary for inspection
             result_dict = analysis_result.dict() if hasattr(analysis_result, 'dict') else {
                 "summary": getattr(analysis_result, 'summary', 'No summary'),
-                "flagged_clauses": getattr(analysis_result, 'flagged_clauses', []),
-                "compliance_issues": getattr(analysis_result, 'compliance_issues', []),
+                "clause_flags": getattr(analysis_result, 'clause_flags', []),
+                "compliance_feedback": getattr(analysis_result, 'compliance_feedback', []),
                 "jurisdiction": getattr(analysis_result, 'jurisdiction', 'Unknown')
             }
             
             print(f"📊 Analysis summary: {result_dict.get('summary', 'N/A')}")
-            print(f"🚩 Flagged clauses: {len(result_dict.get('flagged_clauses', []))}")
+            print(f"🚩 Flagged clauses: {len(result_dict.get('clause_flags', []))}")
             print(f"⚖️ Compliance issues: {len(result_dict.get('compliance_issues', []))}")
             
             return result_dict

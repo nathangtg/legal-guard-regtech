@@ -94,8 +94,8 @@ async def analyze_contract(
         analysis_result = await analyzer.analyze_contract(request)
         
         logger.info(f"Contract analysis completed successfully. "
-                   f"Found {len(analysis_result.flagged_clauses)} flagged clauses, "
-                   f"{len(analysis_result.compliance_issues)} compliance issues")
+                   f"Found {len(analysis_result.clause_flags)} flagged clauses, "
+                   f"{len(analysis_result.compliance_feedback)} compliance issues")
         
         return analysis_result
         

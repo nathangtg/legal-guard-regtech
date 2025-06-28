@@ -424,3 +424,100 @@ class WatsonXClient:
                     pass
             
             return None
+    
+    def analyze_contract_advanced(self, prompt: str, max_tokens: int = 2048, 
+                                 temperature: float = 0.1, top_p: float = 0.9) -> str:
+        """
+        Advanced contract analysis with configurable parameters.
+        
+        Args:
+            prompt: The complete analysis prompt to send to the model
+            max_tokens: Maximum tokens in the response
+            temperature: Sampling temperature (0.0 to 1.0)
+            top_p: Top-p sampling parameter
+            
+        Returns:
+            JSON string containing analysis results
+            
+        Raises:
+            APIError: If the API request fails
+            ResponseParsingError: If response cannot be parsed
+        """
+        logger.info("Starting advanced contract analysis with custom parameters")
+        
+        # Use the provided prompt directly with enhanced parameters
+        return self._make_request_with_params(prompt, max_tokens, temperature, top_p)
+    
+    def _make_request_with_params(self, prompt: str, max_tokens: int, 
+                                 temperature: float, top_p: float) -> str:
+        """
+        Make a request to the WatsonX API with custom parameters.
+        
+        Args:
+            prompt: The prompt to send
+            max_tokens: Maximum tokens in response
+            temperature: Sampling temperature
+            top_p: Top-p sampling parameter
+            
+        Returns:
+            Raw response text from the model
+            
+        Raises:
+            APIError: If the API request fails
+        """
+        try:
+            token = self.auth.get_access_token()
+            
+            headers = {
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+            
+            payload = {
+                "input": prompt,
+                "parameters": {
+                    "decoding_method": "greedy",
+                    "max_new_tokens": max_tokens,
+                    "temperature": temperature,
+                    "top_p": top_p,
+                    "repetition_penalty": 1.1
+                },
+                "model_id": self.config.model_id,
+                "project_id": self.config.project_id
+            }
+            
+            logger.debug(f"Making WatsonX API request with custom params: max_tokens={max_tokens}, temp={temperature}, top_p={top_p}")
+            
+            response = requests.post(
+                f"{self.config.base_url}/ml/v1/text/generation",
+                headers=headers,
+                json=payload,
+                timeout=120
+            )
+            
+            if response.status_code != 200:
+                error_detail = response.text if response.text else "Unknown error"
+                logger.error(f"WatsonX API error (HTTP {response.status_code}): {error_detail}")
+                raise APIError(f"WatsonX API request failed: HTTP {response.status_code} - {error_detail}")
+            
+            response_json = response.json()
+            
+            if 'results' not in response_json or not response_json['results']:
+                raise APIError("Invalid response format from WatsonX API")
+            
+            generated_text = response_json['results'][0].get('generated_text', '')
+            
+            if not generated_text.strip():
+                logger.warning("Empty response from WatsonX API")
+                return "{}"
+            
+            logger.debug(f"Received response of length: {len(generated_text)}")
+            return generated_text.strip()
+            
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Network error during WatsonX API request: {str(e)}")
+            raise APIError(f"Network error: {str(e)}")
+        except Exception as e:
+            logger.error(f"Unexpected error during WatsonX API request: {str(e)}")
+            raise APIError(f"Unexpected error: {str(e)}")

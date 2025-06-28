@@ -1,8 +1,18 @@
 """
-Test the updated ContractAnalyzerService with our custom AI client.
-"""
-
-import asyncio
+Test the updated ContractAnalyzerService with our custom AI client        # Show some details
+        if analysis_result.clause_flags:
+            print("\n   🔍 Sample flagged clause:")
+            clause = analysis_result.clause_flags[0]
+            print(f"      - Text: {clause.clause_text[:100]}...")
+            print(f"      - Issue: {clause.issue_description[:100]}...")
+            print(f"      - Severity: {clause.severity}")
+        
+        if analysis_result.compliance_feedback:
+            print("\n   📜 Sample compliance issue:")
+            issue = analysis_result.compliance_feedback[0]
+            print(f"      - Law: {issue.law_reference}")
+            print(f"      - Missing: {issue.missing_requirements[:2]}")
+            print(f"      - Status: {issue.compliance_status}") asyncio
 import os
 import sys
 from pathlib import Path
@@ -65,8 +75,8 @@ async def test_contract_analyzer_service():
         
         print("✅ Contract analysis completed successfully")
         print(f"   📋 Summary: {analysis_result.summary}")
-        print(f"   🚩 Flagged clauses: {len(analysis_result.flagged_clauses or [])}")
-        print(f"   ⚖️  Compliance issues: {len(analysis_result.compliance_issues or [])}")
+        print(f"   🚩 Flagged clauses: {len(analysis_result.clause_flags or [])}")
+        print(f"   ⚖️  Compliance issues: {len(analysis_result.compliance_feedback or [])}")
         
         # Show some details
         if analysis_result.flagged_clauses:
