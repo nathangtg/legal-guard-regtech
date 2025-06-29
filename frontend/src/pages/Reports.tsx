@@ -38,13 +38,13 @@ interface RiskTrendData {
 
 // Mock data
 const mockComplianceTrend: ComplianceTrendData[] = [
-    { date: '2025-01', complianceRate: 70, criticalAlerts: 15 },
-    { date: '2025-02', complianceRate: 75, criticalAlerts: 12 },
-    { date: '2025-03', complianceRate: 80, criticalAlerts: 10 },
-    { date: '2025-04', complianceRate: 82, criticalAlerts: 9 },
-    { date: '2025-05', complianceRate: 85, criticalAlerts: 7 },
-    { date: '2025-06', complianceRate: 87, criticalAlerts: 5 },
-    { date: '2025-07', complianceRate: 89, criticalAlerts: 4 },
+    { date: 'Jan', complianceRate: 70, criticalAlerts: 15 },
+    { date: 'Feb', complianceRate: 75, criticalAlerts: 12 },
+    { date: 'Mar', complianceRate: 80, criticalAlerts: 10 },
+    { date: 'Apr', complianceRate: 82, criticalAlerts: 9 },
+    { date: 'May', complianceRate: 85, criticalAlerts: 7 },
+    { date: 'Jun', complianceRate: 87, criticalAlerts: 5 },
+    { date: 'Jul', complianceRate: 89, criticalAlerts: 4 },
 ];
 
 const mockContractHistory: ContractAnalysisHistory[] = [
@@ -56,13 +56,13 @@ const mockContractHistory: ContractAnalysisHistory[] = [
 ];
 
 const mockRiskTrend: RiskTrendData[] = [
-    { date: '2025-01', high: 4, medium: 5, low: 3 },
-    { date: '2025-02', high: 3, medium: 4, low: 6 },
-    { date: '2025-03', high: 5, medium: 6, low: 7 },
-    { date: '2025-04', high: 2, medium: 5, low: 8 },
-    { date: '2025-05', high: 3, medium: 3, low: 10 },
-    { date: '2025-06', high: 1, medium: 4, low: 11 },
-    { date: '2025-07', high: 2, medium: 3, low: 12 },
+    { date: 'Jan', high: 4, medium: 5, low: 3 },
+    { date: 'Feb', high: 3, medium: 4, low: 6 },
+    { date: 'Mar', high: 5, medium: 6, low: 7 },
+    { date: 'Apr', high: 2, medium: 5, low: 8 },
+    { date: 'May', high: 3, medium: 3, low: 10 },
+    { date: 'Jun', high: 1, medium: 4, low: 11 },
+    { date: 'Jul', high: 2, medium: 3, low: 12 },
 ];
 
 export default function Reports() {
