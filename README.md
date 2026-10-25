@@ -3,16 +3,9 @@
 > **IBM TechXchange Hackathon 2025 Submission**  
 > *Democratizing Legal Intelligence Through AI-Powered Document Analysis*
 
-## 🎥 Demo Video
-**Watch our project demo below:**
-
-[![Watch the Demo](https://img.youtube.com/vi/v11iNBuYcpY/maxresdefault.jpg)](https://youtu.be/v11iNBuYcpY)
-
-*Click the image above to watch our full demonstration on YouTube*
-
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
@@ -22,11 +15,11 @@
 
 ---
 
-## 🎯 Project Vision
+## Project Vision
 
 **Legal Guard RegTech** transforms how businesses navigate complex legal landscapes by providing AI-powered document analysis, compliance checking, and regulatory intelligence. Built for the IBM TechXchange Hackathon, this platform makes legal expertise accessible to organizations of all sizes.
 
-### 🏆 Why This Matters
+### Why This Matters
 - **70%** of businesses struggle with compliance due to complex legal language
 - **$14.8 billion** lost annually due to regulatory non-compliance
 - **Small businesses** can't afford dedicated legal teams
@@ -34,7 +27,7 @@
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 ### 🤖 **AI-Powered Document Intelligence**
 - **Smart Summarization**: Convert complex legal jargon into plain English
@@ -186,22 +179,22 @@ const { data, isLoading, error } = useQuery(
 
 ---
 
-## 🚀 Live API Endpoints
+## API Endpoints
 
 ### **Core Document Analysis**
 | Endpoint | Method | Description | Status |
 |----------|--------|-------------|--------|
-| `/contract/analyze` | POST | Analyze contract text for compliance | ✅ Live |
-| `/contract/analyze/file` | POST | Upload & analyze document files | ✅ Live |
-| `/contract/risk-score` | POST | Generate compliance risk scores | ✅ Live |
-| `/contract/extract-text` | POST | Extract text from documents | ✅ Live |
+| `/contract/analyze` | POST | Analyze contract text for compliance | Live |
+| `/contract/analyze/file` | POST | Upload & analyze document files | Live |
+| `/contract/risk-score` | POST | Generate compliance risk scores | Live |
+| `/contract/extract-text` | POST | Extract text from documents | Live |
 
 ### **AI-Powered Insights**
 | Endpoint | Method | Description | Status |
 |----------|--------|-------------|--------|
-| `/ai/summarize` | POST | Generate plain-language summaries | ✅ Live |
-| `/ai/explain-clause` | POST | Explain complex legal clauses | ✅ Live |
-| `/ai/health` | GET | AI service health check | ✅ Live |
+| `/ai/summarize` | POST | Generate plain-language summaries | Live |
+| `/ai/explain-clause` | POST | Explain complex legal clauses | Live |
+| `/ai/health` | GET | AI service health check | Live |
 
 ### **Regulatory Intelligence**
 | Endpoint | Method | Description | Status |
@@ -269,37 +262,37 @@ curl -X POST "http://localhost:8000/ai/summarize" \
 
 ---
 
-## 🔥 Hackathon Highlights
+## Hackathon Highlights
 
 ### **Innovation Points**
-- 🎯 **Real-world Problem Solving**: Addresses genuine business compliance challenges
-- 🤖 **IBM Watson Integration**: Leverages cutting-edge AI for legal intelligence
-- 🌐 **Multi-jurisdictional Support**: Covers major global privacy regulations
-- ⚡ **Performance Optimized**: Fast document processing and analysis
-- 🎨 **User Experience**: Intuitive interface for non-legal professionals
-- 📱 **Modern Frontend**: React 18 + TypeScript with responsive design
+- **Real-world Problem Solving**: Addresses genuine business compliance challenges
+- **IBM Watson Integration**: Leverages cutting-edge AI for legal intelligence
+- **Multi-jurisdictional Support**: Covers major global privacy regulations
+- **Performance Optimized**: Fast document processing and analysis
+- **User Experience**: Intuitive interface for non-legal professionals
+- **Modern Frontend**: React 18 + TypeScript with responsive design
 
 ### **Technical Excellence**
-- 📐 **Clean Architecture**: Modular, maintainable codebase with TypeScript
-- 🧪 **Comprehensive Testing**: Unit tests and integration tests
-- 📚 **Documentation**: Auto-generated API docs and detailed README
-- 🔧 **Production Ready**: Error handling, logging, and monitoring
-- 🌍 **Scalable Design**: Ready for enterprise deployment
-- 🎨 **Design System**: Consistent UI components with Tailwind CSS
+- **Clean Architecture**: Modular, maintainable codebase with TypeScript
+- **Comprehensive Testing**: Unit tests and integration tests
+- **Documentation**: Auto-generated API docs and detailed README
+- **Production Ready**: Error handling, logging, and monitoring
+- **Scalable Design**: Ready for enterprise deployment
+- **Design System**: Consistent UI components with Tailwind CSS
 
 ### **Frontend Excellence**
-- ⚛️ **Modern React**: Latest React 18 with Hooks and functional components
-- 🎯 **TypeScript**: Full type safety and better developer experience
-- 🎨 **Professional UI**: Dark theme with gradient backgrounds and animations
-- 📱 **Responsive Design**: Mobile-first approach with adaptive layouts
-- ⚡ **Performance**: Vite bundling, code splitting, and optimized loading
-- 🔄 **State Management**: Zustand for global state, React Query for server state
+- **Modern React**: Latest React 18 with Hooks and functional components
+- **TypeScript**: Full type safety and better developer experience
+- **Professional UI**: Dark theme with gradient backgrounds and animations
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Performance**: Vite bundling, code splitting, and optimized loading
+- **State Management**: Zustand for global state, React Query for server state
 
 ### **Business Impact**
-- 💰 **Cost Reduction**: Reduces legal consultation costs by 60%
-- ⏱️ **Time Savings**: 90% faster document review process
-- 📈 **Compliance Improvement**: Proactive risk identification
-- 🎯 **Accessibility**: Makes legal expertise available to SMEs
+- **Cost Reduction**: Reduces legal consultation costs by 60%
+- **Time Savings**: 90% faster document review process
+- **Compliance Improvement**: Proactive risk identification
+- **Accessibility**: Makes legal expertise available to SMEs
 
 ---
 
@@ -307,11 +300,11 @@ curl -X POST "http://localhost:8000/ai/summarize" \
 
 | Regulation | Jurisdiction | Coverage | Implementation |
 |------------|-------------|----------|----------------|
-| **GDPR** | European Union | Data Protection & Privacy | ✅ Complete |
-| **PDPA 2010** | Malaysia | Personal Data Protection | ✅ Complete |
-| **PDPA 2012** | Singapore | Personal Data Protection | ✅ Complete |
-| **CCPA** | California, US | Consumer Privacy Rights | ✅ Complete |
-| **Employment Act** | Malaysia | Employment Law | ✅ Complete |
+| **GDPR** | European Union | Data Protection & Privacy | Complete |
+| **PDPA 2010** | Malaysia | Personal Data Protection | Complete |
+| **PDPA 2012** | Singapore | Personal Data Protection | Complete |
+| **CCPA** | California, US | Consumer Privacy Rights | Complete |
+| **Employment Act** | Malaysia | Employment Law | Complete |
 
 ---
 
@@ -481,58 +474,15 @@ graph LR
 
 ---
 
-## 🚀 Future Roadmap
-
-### **Phase 1: Enhanced AI** (Q3 2025)
-- Multi-language support (Bahasa Malaysia, Mandarin, Tamil)
-- Advanced contract negotiation assistance
-- Predictive compliance analytics
-- **Enhanced UI**: Advanced data visualizations and interactive charts
-
-### **Phase 2: Enterprise Features** (Q4 2025)
-- Workflow integration (Slack, Teams, Email)
-- Advanced reporting and dashboards
-- Custom regulatory framework support
-- **Mobile App**: Native iOS/Android applications
-- **Collaboration Tools**: Team workspaces and shared analyses
-
-### **Phase 3: Global Expansion** (Q1 2026)
-- Additional jurisdictions (UK, Australia, Canada)
-- Industry-specific compliance modules
-- Real-time regulatory updates
-- **AI Assistant**: Conversational AI for legal queries
-- **API Marketplace**: Third-party integrations and plugins
-
----
-
-## 👥 Team
-
-**Built with ❤️ for the IBM TechXchange Hackathon 2025**
-
-| Role | Contribution |
-|------|-------------|
-| **Full-Stack Development** | End-to-end application architecture |
-| **AI Integration** | IBM Watson X.ai implementation |
-| **Legal Research** | Regulatory framework analysis |
-| **UX Design** | User-centric interface design |
-
----
-
-## 📄 License
+## License
 
 This project is developed for the IBM TechXchange Hackathon 2025. All rights reserved.
 
 ---
 
-## 🚀 Get Started Now!
+## Get Started
 
 ```bash
 # One-command setup
 git clone https://github.com/nathangtg/legal-guard-regtech && cd legal-guard-regtech && ./setup.sh
 ```
-
-**Experience the Future of Legal Technology Today!** 🌟
-
----
-
-*Made with 💙 using IBM Watson X.ai technology*
